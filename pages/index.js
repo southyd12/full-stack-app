@@ -1,8 +1,10 @@
-import Head from 'next/head'
+import Head from 'next/head';
 // import Image from 'next/image'
 // import { Inter } from 'next/font/google'
-import { Button, EditIcon } from '@/components/mui'
-import Layout from '@/components/Layout'
+import { Button, EditIcon } from '@/components/mui';
+import Layout from '@/components/Layout';
+import Heading from '@/components/Heading';
+import Paragraph from '@/components/Paragraph';
 
 // const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +18,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <h1>Homepage</h1>
+        <Heading component="h2">Homepage</Heading>
+        <Paragraph>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium mollitia repudiandae suscipit iusto, odio ex, ab at vitae quia excepturi, nisi illo? Minus ex reiciendis enim eius dolor, vitae harum.</Paragraph>
         <Button variant="contained"><EditIcon />Button</Button>
       </Layout>
     </>
