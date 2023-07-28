@@ -4,6 +4,8 @@ import Image from 'next/image'
 import { Button, EditIcon } from '@/components/mui'
 import Layout from '@/components/Layout'
 import Heading from '@/components/Heading';
+import ContactForm from '@/components/forms/ContactForm';
+import { sendEmail } from '@/lib/api-functions/client';
 
 // const inter = Inter({ subsets: ['latin'] })
 
@@ -17,8 +19,8 @@ export default function Contact() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <Heading component="h2">Contact us</Heading>
-        <Button variant="contained"><EditIcon />Button</Button>        
+        <Heading component="h2">Contact Us</Heading> 
+        <ContactForm submitHandler={sendEmail} />     
       </Layout>
     </>
   )
