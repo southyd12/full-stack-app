@@ -38,6 +38,13 @@ function DesktopNavigation({
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             <Button
+                sx={{ color: lightTextColor }}
+                component={Link}
+                href="/blog"
+              >
+                Blog
+              </Button>
+            <Button
               sx={{ color: lightTextColor }}
               component={Link}
               href="/contact"

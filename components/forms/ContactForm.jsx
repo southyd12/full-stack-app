@@ -21,7 +21,6 @@ const defaults = {
 };
 
 export default function ContactForm({ submitHandler }) {
-  // console.log(car);
 
   const {
     handleSubmit,
