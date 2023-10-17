@@ -69,7 +69,7 @@ function MobileNavigation({
                 </ListItemButton>
               </Link>
             </ListItem>
-            {user && user["https://full-stack-gwrs352d6-southyd12.vercel.app/admin"] && (
+            {user && user["https://full-stack-app-livid.vercel.app//admin"] && (
               <ListItem>
                 <Link href={"/admin"} passHref style={itemLinkStyles}>
                   <ListItemButton sx={{ textAlign: "left", width: "100%" }}>

@@ -51,7 +51,7 @@ function DesktopNavigation({
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {user && <ShoppingCartDisplay user={user} />}
-            {user && user["https://full-stack-gwrs352d6-southyd12.vercel.app//admin"] && (
+            {user && user["https://full-stack-app-livid.vercel.app///admin"] && (
               <Button
               sx={{ color: lightTextColor }}
               component={Link}
