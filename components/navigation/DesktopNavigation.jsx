@@ -1,13 +1,26 @@
 import React from "react";
 import Link from "next/link";
-import {  Button, AppBar, Box, IconButton, MenuIcon, Toolbar, Typography} from '@/components/mui';
+import {
+  AppBar,
+  Box,
+  IconButton,
+  MenuIcon,
+  Toolbar,
+  Typography,
+  Button,
+} from "@/components/mui";
 import { useTheme } from "@mui/material/styles";
+import { useUser } from "@auth0/nextjs-auth0/client";
+import QueryBoundaries from "../QueryBoundaries";
+
+import ShoppingCartDisplay from "@/components/BasketDisplay";
 
 function DesktopNavigation({
   handleDrawerToggle = () =>
     console.log("no handleDrawerToggle function provided"),
 }) {
   const theme = useTheme();
+  const { user } = useUser();
   // console.log(theme);
   const lightTextColor = theme.palette.common.white;
   return (
@@ -37,13 +50,23 @@ function DesktopNavigation({
             Design Shop
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
+            {user && <ShoppingCartDisplay user={user} />}
+            {user && user["https://full-stack-gwrs352d6-southyd12.vercel.app//admin"] && (
+              <Button
+              sx={{ color: lightTextColor }}
+              component={Link}
+              href="/admin"
+            >
+              Admin
+            </Button>
+            )}
             <Button
-                sx={{ color: lightTextColor }}
-                component={Link}
-                href="/blog"
-              >
-                Blog
-              </Button>
+              sx={{ color: lightTextColor }}
+              component={Link}
+              href="/blog"
+            >
+              Blog
+            </Button>
             <Button
               sx={{ color: lightTextColor }}
               component={Link}
@@ -51,6 +74,32 @@ function DesktopNavigation({
             >
               Contact
             </Button>
+            {user ? (
+              <>
+                <Button
+                  href="/profile"
+                  component={Link}
+                  sx={{ color: lightTextColor }}
+                >
+                  Profile
+                </Button>
+                <Button
+                  href="/api/auth/logout"
+                  component={Link}
+                  sx={{ color: lightTextColor }}
+                >
+                  Log Out
+                </Button>
+              </>
+            ) : (
+              <Button
+                href="/api/auth/login"
+                component={Link}
+                sx={{ color: lightTextColor }}
+              >
+                Log In
+              </Button>
+            )}
           </Box>
         </Toolbar>
       </AppBar>
