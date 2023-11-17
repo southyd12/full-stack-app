@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import nc from "next-connect";
-import {getSession} from "@auth0/nextjs-auth0";
+import { getSession } from "@auth0/nextjs-auth0";
 
 import {handleUnauthorisedAPICall, checkPermissions} from "@/lib/api-functions/server/utils";
 

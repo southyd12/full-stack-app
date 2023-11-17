@@ -16,16 +16,16 @@ export default function Blog({ssd=[]}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <Heading component="h2">Blog List</Heading>
-        <List component={"ol"} sx={{ listStyle: "none" }}>
+        <Heading component="h2" sx={{textDecoration: "underline"}}>Sports Blog</Heading>
+        <List component={"ol"} sx={{ listStyle: "none", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(400px,1fr))" }}>
           {ssd.map(({ id, title, slug, heroImage: { url } }) => (
             <ListItem key={id}>
-              <Card component={"article"} sx={{ width: "100%" }}>
+              <Card component={"article"} variant="outlined" sx={{ width: "100%", ':hover': {borderColor: "#000000", boxShadow: 3} }}>
                 <CardMedia sx={{ display: "grid", placeContent: "center" }}>
-                  <Image alt={title} src={url} width="200" height="200" />
+                  <Image alt={title} src={url} width="400" height="300" />
                 </CardMedia>
                 <CardContent>
-                  <Heading component="h2">{title}</Heading>
+                  <Heading component="h4" sx={{textAlign: "center"}}>{title}</Heading>
                 </CardContent>
                 <CardActions>
                   <Link href={`/blog/${slug}`}>Read more...</Link>

@@ -29,7 +29,7 @@ export default function BasketPage({ basket }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <Heading component="h1">Checkout</Heading>
+        <Heading component="h1" sx={{textDecoration: "underline"}}>Checkout</Heading>
         <QueryBoundaries>
           <Box sx={{ marginBlockEnd: "2em" }}>
             <CheckoutSummary />

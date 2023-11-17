@@ -19,7 +19,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <Heading component="h2">Products</Heading>
+        <Heading component="h2" sx={{textDecoration: "underline"}}>Products</Heading>
         <QueryBoundaries>
           <ProductList />
         </QueryBoundaries>
