@@ -45,7 +45,7 @@ const handler = nc({
   try {
     const session = await getSession(req, res);
     req.user = session.user;
-    // console.log(session);
+    console.log(session);
     console.log(req.user);
     next();
   } catch (err) {
