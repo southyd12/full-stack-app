@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
+import { useTheme } from "@mui/material/styles";
 import { useUser } from "@auth0/nextjs-auth0/client";
 
 import {
@@ -22,6 +23,7 @@ function MobileNavigation({
   drawerWidth = 240,
 }) {
   const { user } = useUser();
+  const theme = useTheme();
   const itemLinkStyles = {
     display: "block",
     textDecoration: "none",
@@ -42,7 +44,7 @@ function MobileNavigation({
         }}
       >
         <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-          <Typography variant="h6" sx={{ my: 2 }}>
+          <Typography variant="h6" color="secondary" sx={{ my: 2 }}>
             Design Shop {user && <ShoppingCartDisplay user={user} />}
           </Typography>
           <Divider />
@@ -50,7 +52,7 @@ function MobileNavigation({
             <ListItem>
               <Link href={"/"} passHref style={itemLinkStyles}>
                 <ListItemButton sx={{ textAlign: "left", width: "100%" }}>
-                  <ListItemText primary={"Shop"} />
+                  <ListItemText primary={"Shop"} color="secondary" />
                 </ListItemButton>
               </Link>
             </ListItem>
@@ -58,14 +60,14 @@ function MobileNavigation({
             <ListItem>
               <Link href={"/blog"} passHref style={itemLinkStyles}>
                 <ListItemButton sx={{ textAlign: "left", width: "100%" }}>
-                  <ListItemText primary={"Blog"} />
+                  <ListItemText primary={"Blog"} color="secondary" />
                 </ListItemButton>
               </Link>
             </ListItem>
             <ListItem>
               <Link href={"/contact"} passHref style={itemLinkStyles}>
                 <ListItemButton sx={{ textAlign: "left", width: "100%" }}>
-                  <ListItemText primary={"Contact"} />
+                  <ListItemText primary={"Contact"} color="secondary" />
                 </ListItemButton>
               </Link>
             </ListItem>
@@ -73,7 +75,7 @@ function MobileNavigation({
               <ListItem>
                 <Link href={"/admin"} passHref style={itemLinkStyles}>
                   <ListItemButton sx={{ textAlign: "left", width: "100%" }}>
-                    <ListItemText primary={"Admin"} />
+                    <ListItemText primary={"Admin"} color="secondary" />
                   </ListItemButton>
                 </Link>
               </ListItem>
@@ -83,7 +85,7 @@ function MobileNavigation({
                 <ListItem>
                   <Link href={"/profile"} passHref style={itemLinkStyles}>
                     <ListItemButton sx={{ textAlign: "left" }}>
-                      <ListItemText primary={"Profile"} />
+                      <ListItemText primary={"Profile"} color="secondary" />
                     </ListItemButton>
                   </Link>
                 </ListItem>
@@ -94,7 +96,7 @@ function MobileNavigation({
                     style={itemLinkStyles}
                   >
                     <ListItemButton sx={{ textAlign: "left", width: "100%" }}>
-                      <ListItemText primary={"Log Out"} />
+                      <ListItemText primary={"Log Out"} color="secondary" />
                     </ListItemButton>
                   </Link>
                 </ListItem>
@@ -107,7 +109,7 @@ function MobileNavigation({
                   style={{ textDecoration: "none" }}
                 >
                   <ListItemButton sx={{ textAlign: "left" }}>
-                    <ListItemText primary={"Log In"} />
+                    <ListItemText primary={"Log In"} color="secondary" />
                   </ListItemButton>
                 </Link>
               </ListItem>
