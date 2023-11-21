@@ -14,6 +14,7 @@ export default function AddProduct() {
     addMutation.mutate(data);
     router.push("/admin/products/");
   };
+  // console.log ('submit', submitHandler);
   return (
     <>
       <Head>
