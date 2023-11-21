@@ -22,7 +22,7 @@ function DesktopNavigation({
   const theme = useTheme();
   const { user } = useUser();
   // console.log(theme);
-  const lightTextColor = theme.palette.common.white;
+  const darkTextColor = theme.palette.secondary.main;
   return (
     <>
       <AppBar component="nav" position="sticky" sx={{ mb: 2 }}>
@@ -44,7 +44,7 @@ function DesktopNavigation({
               flexGrow: 1,
               display: { xs: "none", sm: "block" },
               textDecoration: "none",
-              color: lightTextColor,
+              color: darkTextColor,
             }}
           >
             Design Shop
@@ -53,7 +53,7 @@ function DesktopNavigation({
             {user && <ShoppingCartDisplay user={user} />}
             {user && user["https://full-stack-app-livid.vercel.app///admin"] && (
               <Button
-              sx={{ color: lightTextColor }}
+              sx={{ color: darkTextColor }}
               component={Link}
               href="/admin"
             >
@@ -61,14 +61,14 @@ function DesktopNavigation({
             </Button>
             )}
             <Button
-              sx={{ color: lightTextColor }}
+              sx={{ color: darkTextColor }}
               component={Link}
               href="/blog"
             >
               Blog
             </Button>
             <Button
-              sx={{ color: lightTextColor }}
+              sx={{ color: darkTextColor }}
               component={Link}
               href="/contact"
             >
@@ -79,14 +79,14 @@ function DesktopNavigation({
                 <Button
                   href="/profile"
                   component={Link}
-                  sx={{ color: lightTextColor }}
+                  sx={{ color: darkTextColor }}
                 >
                   Profile
                 </Button>
                 <Button
                   href="/api/auth/logout"
                   component={Link}
-                  sx={{ color: lightTextColor }}
+                  sx={{ color: darkTextColor }}
                 >
                   Log Out
                 </Button>
@@ -95,7 +95,7 @@ function DesktopNavigation({
               <Button
                 href="/api/auth/login"
                 component={Link}
-                sx={{ color: lightTextColor }}
+                sx={{ color: darkTextColor }}
               >
                 Log In
               </Button>
