@@ -47,8 +47,8 @@ const StripeButton = () => {
   };
   return (
     <StripeCheckout
-      name="Design Shop"
-      description="Homemade Designs for Sale" 
+      name="Football World"
+      description="Footy memorabilia for Sale" 
       amount={basketTotal} // pennies
       currency="GBP"
       stripeKey={process.env.STRIPE_PUBLIC_KEY}
@@ -59,7 +59,7 @@ const StripeButton = () => {
       zipCode={false}
       token={onToken}
     >
-      <Button variant="contained">Pay with Stripe</Button>
+      <Button variant="contained" sx={{p: 2}}>Pay with Stripe</Button>
     </StripeCheckout>
   );
 };

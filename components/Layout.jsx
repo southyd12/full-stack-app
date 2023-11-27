@@ -26,7 +26,7 @@ function Layout({children}) {
         <Header />
       </header>
       <main>
-        <Container maxWidth="xl">
+        <Container maxWidth="xl" sx={{backgroundColor: 'rgba(255,249,222,1)', minHeight: '100vh'}}>
           {children}
         </Container>
       </main> 

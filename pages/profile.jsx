@@ -17,11 +17,10 @@ export default function ProfilePage({ ssd, sess }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <Heading component="h2">Profile</Heading>
+        <Heading component="h2" sx={{color: "#021691", p: 2, fontWeight: 500, textAlign: "center"}}>Profile</Heading>
         <QueryBoundaries>
           <UserDisplay user={ssd} />
         </QueryBoundaries>
-        <pre>{JSON.stringify(sess, null, 2)}</pre>
       </Layout>
     </>
   );

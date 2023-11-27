@@ -12,13 +12,14 @@ const BasketList = ({
 }) => {
   const { data: basket } = useUserBasket();
   const {items} = basket;
-  if (!items.length) return <Paragraph>No items to show</Paragraph>;
+  if (!items.length) return <Paragraph sx={{textAlign: "center", color: "#021691"}}>No items to show</Paragraph>;
   return (
     <List
       component="ol"
       sx={{
         display: "grid",
         gridTemplateColumns: "repeat(auto-fill, minmax(400px,1fr))",
+        justifyContent: "center",
       }}
     >
       {items.map((item) => (

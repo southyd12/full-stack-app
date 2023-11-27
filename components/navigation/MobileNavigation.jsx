@@ -43,7 +43,7 @@ function MobileNavigation({
       >
         <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
           <Typography variant="h6" sx={{ my: 2 }}>
-            Football Shop {user && <ShoppingCartDisplay user={user} />}
+            Football World {user && <ShoppingCartDisplay user={user} />}
           </Typography>
           <Divider />
           <List>

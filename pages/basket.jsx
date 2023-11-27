@@ -31,7 +31,7 @@ export default function BasketPage({ basket }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <Heading component="h1" sx={{textDecoration: "underline"}}>Your Basket</Heading>
+        <Heading component="h2" sx={{color: "#021691", p: 2, fontWeight: 500, textAlign: "center"}}>Your Basket</Heading>
 
         <QueryBoundaries>
           <BasketTotal />

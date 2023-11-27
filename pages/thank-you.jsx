@@ -19,7 +19,7 @@ export default function ThankYouPage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <Heading component="h2">Thank you for your order!</Heading>
+        <Heading component="h2" sx={{color: "#021691", p: 2, fontWeight: 500, textAlign: "center"}}>Thank you for your order!</Heading>
         <Paragraph>
           You can view a copy of your receipt <a href={receiptURL}>here</a>
         </Paragraph>

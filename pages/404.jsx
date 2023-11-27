@@ -14,10 +14,10 @@ export default function Custom404() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <Heading component="h1" variant="h3">
+        <Heading component="h2" sx={{color: "#021691", p: 2, fontWeight: 500, textAlign: "center"}}>
           Page Not Found
         </Heading>
-        <Button href="/" component={Link}>
+        <Button href="/" component={Link} variant="contained" sx={{display: "flex", justifyContent: "center", alignItems: "center", width: "auto", p: 2}}>
           Back to home page
         </Button>
       </Layout>

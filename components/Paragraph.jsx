@@ -2,7 +2,7 @@ import { Typography } from "@/components/mui";
 
 const Paragraph = ({ children, ...props }) => {
   return (
-    <Typography paragraph {...props}>
+    <Typography sx={{ color: "#021691" }} paragraph {...props}>
       {children}
     </Typography>
   );

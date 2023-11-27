@@ -30,7 +30,7 @@ export default function BlogPost({ssd={}}) {
             <Image alt={title} src={url} width="400" height="300" />
           </CardMedia>
           <CardContent sx={{textAlign: "center"}}>
-            <Heading component="h2">{title}</Heading>
+            <Heading component="h3" sx={{textAlign: "center", color: "#021691"}}>{title}</Heading>
             <Markdown>{body}</Markdown>
           </CardContent>
         </Card>       

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { dinero, add, toDecimal } from "dinero.js";
 import { GBP } from "@dinero.js/currencies";
-import { Button } from "@/components/mui";
+import { Button, Box } from "@/components/mui";
 import Paragraph from "@/components/Paragraph";
 import { useUserBasket } from "@/lib/tq/baskets/queries";
 import { formatPrice } from "@/lib/utils/formatters";
@@ -17,10 +17,12 @@ const BasketTotal = ({}) => {
     <>
       {basket.items.length ? (
         <>
-          <Button component={Link} href="/checkout" variant="contained">
+          <Box sx={{textAlign: "center"}}>
+          <Button component={Link} href="/checkout" variant="contained" sx={{p: 2, mb: 1}}>
             Checkout
           </Button>
-          <Paragraph>Total: {formatPrice(toDecimal(basketTotal))}</Paragraph>
+          <Paragraph sx={{mb: 1, fontWeight: "bold", color: "#021691"}}>Total: {formatPrice(toDecimal(basketTotal))}</Paragraph>
+          </Box>
         </>
       ) : null}
     </>

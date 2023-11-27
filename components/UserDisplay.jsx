@@ -57,8 +57,6 @@ const UserDisplay = ({user}) => {
         </CardContent>
         {/* <CardActions></CardActions> */}
       </Card>
-      <hr />
-      <pre>{JSON.stringify(user, null, 2)}</pre>
     </>
   );
 };

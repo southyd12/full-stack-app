@@ -25,7 +25,7 @@ function DesktopNavigation({
   const darkTextColor = theme.palette.secondary.main;
   return (
     <>
-      <AppBar component="nav" position="sticky" sx={{ mb: 2 }}>
+      <AppBar component="nav" position="sticky" sx={{ mb: 0 }}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -37,7 +37,7 @@ function DesktopNavigation({
             <MenuIcon />
           </IconButton>
           <Typography
-            variant="h6"
+            variant="h5"
             component={Link}
             href={`/`}
             sx={{
@@ -47,7 +47,7 @@ function DesktopNavigation({
               color: darkTextColor,
             }}
           >
-            Football Shop
+            Football World
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {user && <ShoppingCartDisplay user={user} />}

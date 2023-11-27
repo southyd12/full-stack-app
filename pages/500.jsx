@@ -15,13 +15,13 @@ export default function Custom500() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <Heading component="h1" variant="h3">
+        <Heading component="h2" sx={{color: "#021691", p: 2, fontWeight: 500, textAlign: "center"}}>
           Server Error
         </Heading>
-        <Paragraph>
+        <Paragraph sx={{color: "#021691", p: 2, fontWeight: 500, textAlign: "center"}}>
           The server is unavailable at the moment. Please try again later.
         </Paragraph>
-        <Button href="/" component={Link}>
+        <Button href="/" component={Link} variant="contained" sx={{display: "flex", justifyContent: "center", alignItems: "center", width: "auto", p: 2}}>
           Back to home page
         </Button>
       </Layout>

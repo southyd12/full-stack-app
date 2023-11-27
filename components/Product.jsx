@@ -17,6 +17,7 @@ import {
 } from "@/components/mui";
 import Heading from "@/components/Heading";
 import { slugify, formatPrice } from "@/lib/utils/formatters";
+import { useUser } from "@auth0/nextjs-auth0/client";
 
 const ProductDisplay = ({
   product: { _id, title, image, price, quantity } = {},
@@ -29,15 +30,17 @@ const ProductDisplay = ({
   headingLevel = 2,
   canUpdate = false,
   canRemove = false,
-  canBuy=false
+  canBuy=false,
+  showViewButton = true
 }) => {
+  const { user } = useUser();
   return (
-    <Card sx={{ width: "100%" }}>
-      <CardMedia sx={{ display: "grid", placeItems: "center" }}>
+    <Card variant="outlined" sx={{ width: "100%", ':hover': {borderColor: "rgba(37,41,88,1)", boxShadow: 3} }}>
+      <CardMedia sx={{ display: "grid", placeItems: "center", borderBottom: "dashed", borderColor: "rgba(37,41,88,1)"   }}>
         <Image alt={title} src={image} width="500" height="500" />
       </CardMedia>
       <CardContent>
-        <Heading component={`h${headingLevel}`} sx={{ textAlign: "center" }}>
+        <Heading component={`h${headingLevel}`} sx={{ textAlign: "center", mb: 2, color: "#021691", ':hover': {textDecoration: "underline"} }}>
           {title}
         </Heading>
         <List
@@ -48,25 +51,35 @@ const ProductDisplay = ({
             gap: "1em",
           }}
         >
-          <Typography component="dt" sx={{ textAlign: "right" }}>
-            Price
+          <Typography component="dt" sx={{ textAlign: "right", color: "#021691" }}>
+            Price:
           </Typography>
-          <Typography component="dd" sx={{ fontWeight: "bold" }}>
+          <Typography component="dd" sx={{ fontWeight: "bold", color: "#021691" }}>
             {formatPrice(toDecimal(dinero({ amount: price, currency: GBP})))}
           </Typography>
-          <Typography component="dt" sx={{ textAlign: "right" }}>
-            Quantity
+          <Typography component="dt" sx={{ textAlign: "right", color: "#021691" }}>
+            Quantity:
           </Typography>
-          <Typography component="dd" sx={{ fontWeight: "bold" }}>
+          <Typography component="dd" sx={{ fontWeight: "bold", color: "#021691" }}>
             {quantity} remaining
           </Typography>
         </List>
       </CardContent>
       <CardActions sx={{ display: "grid", placeItems: "center" }}>
         <Box>
-          <Button href={`/products/${slugify(title, _id)}`} component={Link}>
+        {user ? (
+          <>
+          {showViewButton && (
+          <Button variant="contained" sx={{p: 1.5, m: 1.5}} href={`/products/${slugify(title, _id)}`} component={Link}>
             View
           </Button>
+          )}
+          </>
+        ) : (
+          <Typography sx={{ color: "#021691", textAlign: "center" }}>
+            Please login to buy products
+          </Typography>
+        )}
           {canUpdate && (
             <IconButton
               aria-label="update"
@@ -82,7 +95,7 @@ const ProductDisplay = ({
             </IconButton>
           )}
           {canBuy && (
-            <Button onClick={addToBasket}>
+            <Button variant="contained" sx={{p: 1.5, m: 1.5}} onClick={addToBasket}>
               Add to Basket
             </Button>
           )}
