@@ -48,7 +48,7 @@ const StripeButton = () => {
   return (
     <StripeCheckout
       name="Football World"
-      description="Footy memorabilia for Sale" 
+      description="Footy memorabilia for sale" 
       amount={basketTotal} // pennies
       currency="GBP"
       stripeKey={process.env.STRIPE_PUBLIC_KEY}
